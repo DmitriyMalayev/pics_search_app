@@ -1,14 +1,20 @@
-import React from 'react'
+import React from "react";
 
-class SearchBar extends React.Component{
+class SearchBar extends React.Component {
   render() {
     return (
-      <div>Search Bar</div>
-    )
+      <div className="ui sigment">
+        <form className="ui form">
+          <div className="field">
+            <label>Image Search</label>
+            <input type="text" />
+          </div>
+        </form>
+      </div>
+    );
   }
 }
 
-export default SearchBar
-
+export default SearchBar;
 
 //We're using a class based component because we plan to utilize state
