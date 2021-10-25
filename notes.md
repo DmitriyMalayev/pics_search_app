@@ -87,3 +87,16 @@ this is a reference back to the class itself
 
 `How is the value of "this" determined in a function?`
 Look where it's called and to the left of the dot
+
+
+# Props
+`Passing information from the parent component down to the child component`
+App
+  SearchBar
+  ImageList
+
+# Class Based Component Props
+```js
+this.props.onSubmit()  
+```
+//Whenever we are in a class based component we use this.props 
