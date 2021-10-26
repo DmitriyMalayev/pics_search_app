@@ -120,6 +120,22 @@ this.props.onSubmit();
 
 
 
-```js
-axios.get('http://localhost')
-```
+# Flow Of Our App
+
+Component renders itself one time with no list of images
+onSearchSubmit method is called
+A request is made to unsplash
+wait
+A request is completed
+Set image data on state of App Component 
+We use setState and set our images as state for our App Component
+The App Component rerenders and shows images 
+
+
+
+
+
+
+
+
+
