@@ -102,23 +102,19 @@ this.props.onSubmit();
 //Whenever we are in a class based component we use this.props
 ```
 
-
-
 `React`
-  It's not the job of the React library to make a request to unsplash API
-  React is only about showing content to our users and handling user interaction
+It's not the job of the React library to make a request to unsplash API
+React is only about showing content to our users and handling user interaction
 `AJAX Client`
-  To make an AJAX Request we have separate code 
+To make an AJAX Request we have separate code
 `Axios`
-  3rd party package
-  Needs to be installed via npm
-  Offers more features
-  First argument is where we want to send the request to
-  Second argument is an object containing our custom parameters
+3rd party package
+Needs to be installed via npm
+Offers more features
+First argument is where we want to send the request to
+Second argument is an object containing our custom parameters
 `fetch`
-  function built into modern browsers
-
-
+function built into modern browsers
 
 # Flow Of Our App
 
@@ -127,15 +123,40 @@ onSearchSubmit method is called
 A request is made to unsplash
 wait
 A request is completed
-Set image data on state of App Component 
+Set image data on state of App Component
 We use setState and set our images as state for our App Component
-The App Component rerenders and shows images 
+The App Component rerenders and shows images
+
+```js
+class App extends React.Component {
+  onSearchSubmit(term) {
+    axios
+      .get("https://api.unsplash.com/search/photos", {
+        params: { query: term },
+        headers: {
+          Authorization:
+            "Client-ID h0oHMJ3efbKgGYBTJ7KIULU9EOR4mrjbGRTC7uhlqng",
+        },
+      })
+      .then((respose) => {
+        console.log(respose.data.results);
+        //The arrow function will run in the future. It will be invoked with the data returned from unsplash api.
+      });
+  }
+
+  render() {
+    return (
+      <div className="ui container" style={{ marginTop: "10px" }}>
+        <SearchBar onSubmit={this.onSearchSubmit} />
+      </div>
+    );
+  }
+}
+```
 
 
+`async`
+By putting this keyword in front of our function allows us to use async await syntax 
 
-
-
-
-
-
-
+`await`
+We put an await keyword in front of our get request
