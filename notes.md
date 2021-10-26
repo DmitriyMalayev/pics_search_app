@@ -99,6 +99,22 @@ ImageList
 
 ```js
 this.props.onSubmit();
+//Whenever we are in a class based component we use this.props
 ```
 
-//Whenever we are in a class based component we use this.props
+
+
+`React`
+  It's not the job of the React library to make a request to unsplash API
+  React is only about showing content to our users and handling user interaction
+`AJAX Client`
+  To make an AJAX Request we have separate code 
+`Axios`
+  3rd party package
+  Needs to be installed via npm
+  Offers more features
+`fetch`
+  function built into modern browsers
+
+
+
