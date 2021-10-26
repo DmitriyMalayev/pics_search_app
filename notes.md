@@ -113,8 +113,13 @@ this.props.onSubmit();
   3rd party package
   Needs to be installed via npm
   Offers more features
+  First argument is where we want to send the request to
+  Second argument is an object containing our custom parameters
 `fetch`
   function built into modern browsers
 
 
 
+```js
+axios.get('http://localhost')
+```
