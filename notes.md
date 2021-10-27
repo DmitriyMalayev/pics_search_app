@@ -154,9 +154,27 @@ class App extends React.Component {
 }
 ```
 
-
 `async`
-By putting this keyword in front of our function allows us to use async await syntax 
+By putting this keyword in front of our function allows us to use async await syntax
 
 `await`
 We put an await keyword in front of our get request
+
+`map function review`
+
+```js
+const numbers = [0, 1, 2, 3, 4];
+
+let newNumbers = [];
+
+for (let i = 0; i < numbers.length; i++) {
+  newNumbers.push(numbers[i] * 10);
+}
+
+numbers; //original set
+newNumbers; //original set * 10
+
+numbers; //original set
+numbers.map((num) => num * 10); //returns a new array
+numbers.map((num) => <div> num * 10 </div>); //returns a new array
+```
