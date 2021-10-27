@@ -228,7 +228,10 @@ const ImageList = (props) => {
 };
 
 export default ImageList;
-
-
-
 ```
+
+`grid-template-columns `
+specifies, as a space-separated track list, the line names and track sizing functions of the grid.
+`minmax`
+minimum 250px wide
+maximum 1fr (for every column we create we want it to be equally sized)
