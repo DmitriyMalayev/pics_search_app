@@ -178,3 +178,37 @@ numbers; //original set
 numbers.map((num) => num * 10); //returns a new array
 numbers.map((num) => <div> num * 10 </div>); //returns a new array
 ```
+
+```js
+import React from "react";
+
+const ImageList = (props) => {
+  const images = props.images.map((image) => {
+    return <img key={image.id} src={image.urls.regular} />;
+  });
+  return <div>{images}</div>;
+};
+
+export default ImageList;
+
+
+//Key goes into root of the element
+import React from "react";
+
+const ImageList = (props) => {
+  const images = props.images.map((image) => {
+    return (
+      <div key={image.id}>
+        <img src={image.urls.regular} />
+      </div>
+    );
+  });
+  return <div>{images}</div>;
+};
+
+export default ImageList;
+
+
+
+
+```
