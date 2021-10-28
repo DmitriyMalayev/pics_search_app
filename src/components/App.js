@@ -22,13 +22,4 @@ class App extends React.Component {
     );
   }
 }
-
 export default App;
-
-/*
-state = { images: [] };
-  whenever we expect a state property to eventually contain an Array that's what we default it to.
-
-this.setState({ images: response.data.results });
-  This will trigger rerender
-*/

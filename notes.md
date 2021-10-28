@@ -259,3 +259,81 @@ We create refs in the contructor, assign them to instance variables, and then pa
 They do not have to be linked to state
 
 
+# Notes
+```js
+import React from "react";    //App.js
+import unsplash from "../api/unsplash";
+import SearchBar from "./SearchBar";
+import ImageList from "./ImageList";
+
+class App extends React.Component {
+  state = { images: [] };
+
+  onSearchSubmit = async (term) => {
+    const response = await unsplash.get("/search/photos", {
+      params: { query: term },
+    });
+    this.setState({ images: response.data.results });
+  };
+
+  render() {
+    return (
+      <div className="ui container" style={{ marginTop: "10px" }}>
+        <SearchBar onSubmit={this.onSearchSubmit} />
+        <ImageList images={this.state.images} />
+      </div>
+    );
+  }
+}
+
+export default App;
+
+/*
+state = { images: [] };
+  whenever we expect a state property to eventually contain an Array that's what we default it to.
+
+this.setState({ images: response.data.results });
+  This will trigger rerender
+*/
+
+
+
+
+import React from "react";
+
+class ImageCard extends React.Component {   //ImageCard.js
+  constructor(props) {
+    super(props);
+    this.state = { spans: 0 };
+    this.imageRef = React.createRef();
+    // Create a reference and assign it to the instance variable
+  }
+
+  componentDidMount() {
+    this.imageRef.current.addEventListener("load", this.setSpans);
+  }
+
+  setSpans = () => {
+    height = this.imageRef.current.clientHeight;
+    const spans = Math.ceil(height / 10);
+    this.setState({ spans });
+  };
+  // Arrow function used because we want to bind this.
+  // Retrieving the real height after loading in the browser.
+  // 10 refers to row height rounded up to the next row.
+
+  render() {
+    const { description, urls } = this.props.image; //destructuring
+    return (
+      <div style={{ gridRowEnd: `span ${this.state.spans}` }}>
+        <img ref={this.imageRef} alt={description} src={urls.regular} />
+      </div>
+    );
+  }
+}
+
+export default ImageCard;
+
+```
+
+

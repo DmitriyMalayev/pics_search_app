@@ -4,9 +4,7 @@ class SearchBar extends React.Component {
   state = { term: "" };
 
   onFormSubmit = (event) => {
-    console.log(this.props);
     event.preventDefault();
-
     this.props.onSubmit(this.state.term);
   };
 
