@@ -14,12 +14,12 @@ class ImageCard extends React.Component {
 
   setSpans = () => {
     height = this.imageRef.current.clientHeight;
-    const spans = Math.ceil(height / 150);
+    const spans = Math.ceil(height / 10);
     this.setState({ spans });
   };
   // Arrow function used because we want to bind this.
   // Retrieving the real height after loading in the browser.
-  // 150 + 1 refers to row height rounded up to the next row.
+  // 10 refers to row height rounded up to the next row.
 
   render() {
     const { description, urls } = this.props.image; //destructuring
