@@ -237,3 +237,22 @@ minimum 250px wide
 maximum 1fr (for every column we create we want it to be equally sized)
 
 
+
+# Image Card Component Flow
+
+We let the ImageCard component render itself and it's image
+Then, we reach into the DOM and determine the height of the image
+Next, we set the image height on state to get the component to rerender
+When rerendering, we assign a "grid-row-end" to make sure the image takes up the appropriate space without overlapping.
+
+
+`Determining Height of an image in JavaScript`
+We do not use querySelector when working with React. We use the Ref System.  
+```js
+document.querySelector("img").clientHeight 
+```
+
+
+`React Refs System (short for Reference System)`
+Gives access to a single DOM element
+We create refs in the contructor, assign them to instance variables, and then pass to a particular JSX element as props 
