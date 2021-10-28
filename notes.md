@@ -235,3 +235,5 @@ specifies, as a space-separated track list, the line names and track sizing func
 `minmax`
 minimum 250px wide
 maximum 1fr (for every column we create we want it to be equally sized)
+
+
