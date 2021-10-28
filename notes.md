@@ -246,7 +246,7 @@ Next, we set the image height on state to get the component to rerender
 When rerendering, we assign a "grid-row-end" to make sure the image takes up the appropriate space without overlapping.
 
 
-`Determining Height of an image in JavaScript`
+`Determining Height of an image in Vanilla JavaScript`
 We do not use querySelector when working with React. We use the Ref System.  
 ```js
 document.querySelector("img").clientHeight 
@@ -255,4 +255,7 @@ document.querySelector("img").clientHeight
 
 `React Refs System (short for Reference System)`
 Gives access to a single DOM element
-We create refs in the contructor, assign them to instance variables, and then pass to a particular JSX element as props 
+We create refs in the contructor, assign them to instance variables, and then pass to a particular JSX element as props
+They do not have to be linked to state
+
+
